@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+{% block title %}Asset Replenishment Forecasting — RivNox{% endblock %}
+
+{% block content %}
+
+<!-- ====================================================================== -->
+<!-- HERO                                                                   -->
+<!-- ====================================================================== -->
+<section class="relative overflow-hidden bg-gradient-to-b from-surface-950 to-surface-900 text-white">
+    <div class="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-brand-600/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute bottom-0 -left-32 h-[400px] w-[400px] rounded-full bg-accent-500/10 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
+        <div class="mx-auto max-w-3xl text-center animate-fade-in-up">
+            <p class="text-sm font-semibold text-brand-400 uppercase tracking-widest mb-4">Asset Replenishment</p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1]">
+                Predict when and where to restock —<br class="hidden sm:block" />
+                <span class="bg-gradient-to-r from-brand-400 to-accent-400 bg-clip-text text-transparent">before the shortage hits.</span>
+            </h1>
+            <p class="mt-6 text-lg text-surface-100/70 leading-relaxed max-w-2xl mx-auto">
+                Use demand pattern analysis to move from reactive dispatching to forecast-driven replenishment —
+                fewer empty assets, lower logistics costs, better service levels.
+            </p>
+            <div class="mt-10">
+                <a href="/contact"
+                   class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/30 transition-all text-base font-semibold">
+                    Discuss Your Use Case
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- THE PROBLEM                                                            -->
+<!-- ====================================================================== -->
+<section class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-3">The Challenge</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950 leading-tight">
+                    Reactive restocking costs more and serves worse.
+                </h2>
+                <div class="mt-6 space-y-4 text-surface-600 leading-relaxed">
+                    <p>
+                        When replenishment is based on fixed schedules or manual checks, some assets run empty
+                        while others get restocked too early — wasting logistics capacity and leaving customers underserved.
+                    </p>
+                    <p>
+                        Emergency dispatches are expensive. Missed replenishment windows erode trust.
+                        And without a demand signal, teams can't prioritize where to focus first.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Problem visual -->
+            <div class="relative" x-data="{ shown: false }" x-intersect.once="shown = true">
+                <div :class="shown && 'animate-fade-in-up'" class="grid grid-cols-2 gap-4">
+                    <div class="rounded-2xl border border-red-200 bg-red-50 p-6">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 text-red-600 mb-3">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+                        </div>
+                        <p class="text-sm font-bold text-red-900">Empty assets</p>
+                        <p class="mt-1 text-xs text-red-800/70">Customers encounter out-of-stock or out-of-service points</p>
+                    </div>
+                    <div class="rounded-2xl border border-red-200 bg-red-50 p-6">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 text-red-600 mb-3">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+                        </div>
+                        <p class="text-sm font-bold text-red-900">Emergency runs</p>
+                        <p class="mt-1 text-xs text-red-800/70">Unplanned dispatches at premium cost</p>
+                    </div>
+                    <div class="rounded-2xl border border-red-200 bg-red-50 p-6">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 text-red-600 mb-3">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <p class="text-sm font-bold text-red-900">Wasted capacity</p>
+                        <p class="mt-1 text-xs text-red-800/70">Restocking assets that didn't need it yet</p>
+                    </div>
+                    <div class="rounded-2xl border border-red-200 bg-red-50 p-6">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 text-red-600 mb-3">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"/></svg>
+                        </div>
+                        <p class="text-sm font-bold text-red-900">No visibility</p>
+                        <p class="mt-1 text-xs text-red-800/70">Teams can't see which locations need priority</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- THE APPROACH — PIPELINE                                                -->
+<!-- ====================================================================== -->
+<section class="py-20 sm:py-24 bg-surface-50 border-y border-surface-100">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-14">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-3">The Approach</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+                From raw data to optimized replenishment schedules.
+            </h2>
+        </div>
+
+        <!-- Pipeline strip -->
+        <div class="flex flex-wrap justify-center gap-2 mb-16" x-data="{ shown: false }" x-intersect.once="shown = true">
+            <template x-for="(step, i) in ['Data Ingestion', 'Pattern Detection', 'Demand Forecast', 'Depletion Model', 'Replenishment Windows', 'Route Optimization']" :key="i">
+                <div :class="shown && 'animate-fade-in-up'"
+                     :style="'animation-delay:' + (i * 0.07) + 's'"
+                     class="flex items-center gap-2">
+                    <span class="inline-flex items-center px-3.5 py-2 rounded-lg text-xs font-semibold bg-white border border-surface-200 text-surface-700 shadow-sm"
+                          x-text="step"></span>
+                    <svg x-show="i < 5" class="h-4 w-4 text-surface-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </div>
+            </template>
+        </div>
+
+        <!-- Step details -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="rounded-2xl border border-surface-200 bg-white p-7">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600 mb-4">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
+                </div>
+                <h3 class="text-lg font-bold text-surface-900">Data Ingestion & Patterns</h3>
+                <p class="mt-2 text-sm text-surface-600 leading-relaxed">
+                    We connect to transaction logs, fill-level sensors, or operational exports
+                    to detect consumption patterns across locations and time periods.
+                </p>
+            </div>
+
+            <div class="rounded-2xl border border-surface-200 bg-white p-7">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-50 text-accent-600 mb-4">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3"/></svg>
+                </div>
+                <h3 class="text-lg font-bold text-surface-900">Demand Forecast & Depletion</h3>
+                <p class="mt-2 text-sm text-surface-600 leading-relaxed">
+                    Forecast consumption rates per asset and location, accounting for seasonal variation,
+                    day-of-week effects, and external drivers like events or holidays.
+                </p>
+            </div>
+
+            <div class="rounded-2xl border border-surface-200 bg-white p-7">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600 mb-4">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h3 class="text-lg font-bold text-surface-900">Replenishment & Routing</h3>
+                <p class="mt-2 text-sm text-surface-600 leading-relaxed">
+                    Generate optimal restocking windows and group locations into efficient routes —
+                    balancing service levels against logistics cost.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- KEY BENEFITS                                                           -->
+<!-- ====================================================================== -->
+<section class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-14">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-3">Outcomes</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+                What forecast-driven replenishment delivers.
+            </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+             x-data="{ shown: false }" x-intersect.once="shown = true">
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:0s"
+                 class="rounded-2xl border border-surface-100 bg-white p-7 text-center">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 mb-4">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h3 class="font-bold text-surface-900">Fewer empty assets</h3>
+                <p class="mt-2 text-sm text-surface-500">Restock before customers experience a shortage</p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.08s"
+                 class="rounded-2xl border border-surface-100 bg-white p-7 text-center">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 mb-4">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75"/></svg>
+                </div>
+                <h3 class="font-bold text-surface-900">Lower logistics cost</h3>
+                <p class="mt-2 text-sm text-surface-500">Fewer emergency runs, smarter route grouping</p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.16s"
+                 class="rounded-2xl border border-surface-100 bg-white p-7 text-center">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 mb-4">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"/></svg>
+                </div>
+                <h3 class="font-bold text-surface-900">Better service levels</h3>
+                <p class="mt-2 text-sm text-surface-500">Higher asset availability where it matters most</p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.24s"
+                 class="rounded-2xl border border-surface-100 bg-white p-7 text-center">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 mb-4">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <h3 class="font-bold text-surface-900">Full visibility</h3>
+                <p class="mt-2 text-sm text-surface-500">See which locations need priority at a glance</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- FIT CHECK                                                              -->
+<!-- ====================================================================== -->
+<section class="py-20 sm:py-24 bg-surface-50 border-y border-surface-100">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-12">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-3">Fit Check</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+                Is this the right solution for you?
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-8">
+                <h3 class="text-xl font-bold text-emerald-900">Best fit</h3>
+                <ul class="mt-4 space-y-2 text-sm text-emerald-900/90 leading-relaxed">
+                    <li>Networks of distributed physical assets that need periodic restocking.</li>
+                    <li>Operations where empty assets directly impact customer experience or revenue.</li>
+                    <li>Teams managing replenishment with fixed schedules or manual field checks.</li>
+                    <li>Companies with transaction or sensor data they aren't yet using for planning.</li>
+                </ul>
+            </article>
+
+            <article class="rounded-2xl border border-amber-200 bg-amber-50 p-8">
+                <h3 class="text-xl font-bold text-amber-900">Usually not ideal</h3>
+                <ul class="mt-4 space-y-2 text-sm text-amber-900/90 leading-relaxed">
+                    <li>Single-location operations with very predictable, uniform consumption.</li>
+                    <li>Situations where no historical consumption or transaction data is available.</li>
+                    <li>Use cases where a simple time-based schedule already works well enough.</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- CTA                                                                    -->
+<!-- ====================================================================== -->
+<section class="relative py-24 sm:py-32 overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-accent-50"></div>
+
+    <div class="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+            Ready to stop restocking blind?
+        </h2>
+        <p class="mt-4 text-lg text-surface-600 leading-relaxed">
+            Let's explore whether forecast-driven replenishment is the right fit for your operations.
+        </p>
+        <div class="mt-10">
+            <a href="/contact"
+               class="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/30 transition-all text-base font-semibold">
+                Book a 30-minute discussion to see if there's a match
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

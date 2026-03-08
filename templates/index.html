@@ -1,0 +1,440 @@
+{% extends "base.html" %}
+{% block title %}RivNox — AI-Driven Forecasting & Planning{% endblock %}
+
+{% block content %}
+
+<!-- ====================================================================== -->
+<!-- HERO                                                                   -->
+<!-- ====================================================================== -->
+<section class="relative overflow-hidden bg-gradient-to-b from-brand-50/60 via-white to-white">
+    <!-- Decorative blobs -->
+    <div class="pointer-events-none absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-brand-200/30 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-accent-400/15 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 lg:pt-36 lg:pb-32">
+        <div class="mx-auto max-w-3xl text-center animate-fade-in-up">
+            <!-- Badge -->
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-100 px-4 py-1.5 text-xs font-semibold text-brand-700 ring-1 ring-brand-200 mb-8">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                </span>
+                AI-Driven Operations
+            </span>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-surface-950 leading-[1.1]">
+                Forecasting and planning for<br class="hidden sm:block" />
+                <span class="bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">operations that run on precision.</span>
+            </h1>
+
+            <p class="mt-6 text-lg sm:text-xl text-surface-600 leading-relaxed max-w-2xl mx-auto">
+                We help companies move from reactive operations to forecast-driven planning —
+                whether that means restocking assets, scheduling shifts, or optimizing supply chains.
+            </p>
+
+            <!-- CTA buttons -->
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/contact"
+                   class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/30 transition-all text-base font-semibold">
+                    Request a Demo
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <a href="/about"
+                   class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-surface-700 bg-white ring-1 ring-surface-200 hover:ring-surface-300 hover:shadow-md transition-all text-base font-semibold">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <!-- Hero visual — abstract "agent flow" diagram -->
+        <div class="mt-20 mx-auto max-w-4xl animate-fade-in" style="animation-delay:.35s">
+            <div class="relative rounded-2xl bg-surface-950 shadow-2xl ring-1 ring-white/10 overflow-hidden p-8 sm:p-12">
+                <!-- Glowing grid overlay -->
+                <div class="absolute inset-0 opacity-[0.04]" style="background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.5%22/></svg>');"></div>
+
+                <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
+                    <div class="group rounded-xl bg-surface-800/60 border border-surface-100/5 p-5 hover:border-brand-500/30 hover:bg-surface-800 transition-all duration-300">
+                        <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-500/10 text-brand-400 group-hover:bg-brand-500/20 transition">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
+                        </div>
+                        <p class="text-xs font-semibold text-surface-100/80">Ingest</p>
+                        <p class="mt-1 text-[11px] text-surface-100/40 leading-snug">Operational data, exports, APIs</p>
+                    </div>
+
+                    <div class="group rounded-xl bg-surface-800/60 border border-surface-100/5 p-5 hover:border-accent-500/30 hover:bg-surface-800 transition-all duration-300">
+                        <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-accent-500/10 text-accent-400 group-hover:bg-accent-500/20 transition">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47 2.47a2.25 2.25 0 01-1.59.659H9.06a2.25 2.25 0 01-1.591-.659L5 14.5m14 0V18a2.25 2.25 0 01-2.25 2.25H7.25A2.25 2.25 0 015 18v-3.5"/></svg>
+                        </div>
+                        <p class="text-xs font-semibold text-surface-100/80">Model</p>
+                        <p class="mt-1 text-[11px] text-surface-100/40 leading-snug">Build and tune forecast models</p>
+                    </div>
+
+                    <div class="group rounded-xl bg-surface-800/60 border border-surface-100/5 p-5 hover:border-brand-500/30 hover:bg-surface-800 transition-all duration-300">
+                        <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-500/10 text-brand-400 group-hover:bg-brand-500/20 transition">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+                        </div>
+                        <p class="text-xs font-semibold text-surface-100/80">Predict</p>
+                        <p class="mt-1 text-[11px] text-surface-100/40 leading-snug">Demand, timing, and capacity</p>
+                    </div>
+
+                    <div class="group rounded-xl bg-surface-800/60 border border-surface-100/5 p-5 hover:border-accent-500/30 hover:bg-surface-800 transition-all duration-300">
+                        <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-accent-500/10 text-accent-400 group-hover:bg-accent-500/20 transition">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <p class="text-xs font-semibold text-surface-100/80">Act</p>
+                        <p class="mt-1 text-[11px] text-surface-100/40 leading-snug">Plans your teams can execute</p>
+                    </div>
+                </div>
+
+                <!-- Animated connector line -->
+                <div class="hidden sm:block absolute top-1/2 left-[15%] right-[15%] h-px bg-gradient-to-r from-brand-500/0 via-brand-500/40 to-brand-500/0 -translate-y-1/2 -z-0"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- COMPANIES WE WORKED WITH                                               -->
+<!-- ====================================================================== -->
+<section class="py-16 sm:py-20 bg-white border-b border-surface-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-2">Worked With</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-surface-950">
+                Teams we have supported
+            </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="rounded-2xl border border-surface-200 bg-surface-50 px-6 py-5 flex items-center gap-4">
+                <div class="h-11 w-11 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5"/></svg>
+                </div>
+                <p class="text-sm font-semibold text-surface-800">Huntsman</p>
+            </div>
+
+            <div class="rounded-2xl border border-surface-200 bg-surface-50 px-6 py-5 flex items-center gap-4">
+                <div class="h-11 w-11 rounded-xl bg-accent-50 text-accent-600 flex items-center justify-center">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25z"/></svg>
+                </div>
+                <p class="text-sm font-semibold text-surface-800">ASML</p>
+            </div>
+
+            <div class="rounded-2xl border border-surface-200 bg-surface-50 px-6 py-5 flex items-center gap-4">
+                <div class="h-11 w-11 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+                </div>
+                <p class="text-sm font-semibold text-surface-800">Albert Heijn</p>
+            </div>
+
+            <div class="rounded-2xl border border-surface-200 bg-surface-50 px-6 py-5 flex items-center gap-4">
+                <div class="h-11 w-11 rounded-xl bg-accent-50 text-accent-600 flex items-center justify-center">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+                </div>
+                <p class="text-sm font-semibold text-surface-800">DHL</p>
+            </div>
+
+            <div class="rounded-2xl border border-surface-200 bg-surface-50 px-6 py-5 flex items-center gap-4">
+                <div class="h-11 w-11 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
+                </div>
+                <p class="text-sm font-semibold text-surface-800">European Camping Group</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- SOCIAL PROOF / STATS                                                   -->
+<!-- ====================================================================== -->
+<section class="py-16 bg-surface-50 border-y border-surface-100">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" x-data="{ shown: false }" x-intersect.once="shown = true">
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:0s">
+                <p class="text-3xl sm:text-4xl font-extrabold text-brand-600">~1 week</p>
+                <p class="mt-1.5 text-sm text-surface-500">Typical PoC kickoff window</p>
+            </div>
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.1s">
+                <p class="text-3xl sm:text-4xl font-extrabold text-brand-600">2-4 weeks</p>
+                <p class="mt-1.5 text-sm text-surface-500">First production planning flow</p>
+            </div>
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.2s">
+                <p class="text-3xl sm:text-4xl font-extrabold text-brand-600">Data-first</p>
+                <p class="mt-1.5 text-sm text-surface-500">Start from the data you already have</p>
+            </div>
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.3s">
+                <p class="text-3xl sm:text-4xl font-extrabold text-brand-600">Human + AI</p>
+                <p class="mt-1.5 text-sm text-surface-500">Agentic delivery with expert oversight</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- CAPABILITIES GRID                                                      -->
+<!-- ====================================================================== -->
+<section class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center mb-16">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-3">Capabilities</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+                Forecasting at the center.<br class="hidden sm:block" /> Planning as the outcome.
+            </h2>
+            <p class="mt-4 text-lg text-surface-500 leading-relaxed">
+                Every engagement starts with a forecast.
+                What comes next — workforce scheduling, replenishment, pricing — depends on your business.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+             x-data="{ shown: false }" x-intersect.once="shown = true">
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:0s"
+                 class="group relative rounded-2xl bg-white border border-surface-100 p-8 hover:shadow-xl hover:shadow-brand-600/5 hover:border-brand-200 transition-all duration-300">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600 group-hover:bg-brand-100 transition">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+                </div>
+                <h3 class="mt-5 text-lg font-bold text-surface-900">Demand Forecasting</h3>
+                <p class="mt-2 text-sm text-surface-500 leading-relaxed">
+                    Predict demand at the level your operations need — daily, hourly, by location,
+                    by product, or by asset. Weather, events, and trend-aware.
+                </p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.08s"
+                 class="group relative rounded-2xl bg-white border border-surface-100 p-8 hover:shadow-xl hover:shadow-brand-600/5 hover:border-brand-200 transition-all duration-300">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-50 text-accent-600 group-hover:bg-accent-100 transition">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/></svg>
+                </div>
+                <h3 class="mt-5 text-lg font-bold text-surface-900">Replenishment Optimization</h3>
+                <p class="mt-2 text-sm text-surface-500 leading-relaxed">
+                    Know when and where to restock before shortages happen.
+                    Reduce emergency dispatches and wasted logistics runs.
+                </p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.16s"
+                 class="group relative rounded-2xl bg-white border border-surface-100 p-8 hover:shadow-xl hover:shadow-brand-600/5 hover:border-brand-200 transition-all duration-300">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600 group-hover:bg-brand-100 transition">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+                </div>
+                <h3 class="mt-5 text-lg font-bold text-surface-900">Workforce Planning</h3>
+                <p class="mt-2 text-sm text-surface-500 leading-relaxed">
+                    Turn demand forecasts into staffing requirements and shift plans
+                    that managers can review and act on — site by site, day by day.
+                </p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.24s"
+                 class="group relative rounded-2xl bg-white border border-surface-100 p-8 hover:shadow-xl hover:shadow-brand-600/5 hover:border-brand-200 transition-all duration-300">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-50 text-accent-600 group-hover:bg-accent-100 transition">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+                </div>
+                <h3 class="mt-5 text-lg font-bold text-surface-900">Operational Scheduling</h3>
+                <p class="mt-2 text-sm text-surface-500 leading-relaxed">
+                    From route planning to maintenance windows — schedule operational activities
+                    based on predicted need, not fixed cadences.
+                </p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.32s"
+                 class="group relative rounded-2xl bg-white border border-surface-100 p-8 hover:shadow-xl hover:shadow-brand-600/5 hover:border-brand-200 transition-all duration-300">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600 group-hover:bg-brand-100 transition">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"/></svg>
+                </div>
+                <h3 class="mt-5 text-lg font-bold text-surface-900">Scenario Analysis</h3>
+                <p class="mt-2 text-sm text-surface-500 leading-relaxed">
+                    Compare what-if scenarios with confidence bands so your teams
+                    can plan for a range of outcomes, not just a single number.
+                </p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.40s"
+                 class="group relative rounded-2xl bg-white border border-surface-100 p-8 hover:shadow-xl hover:shadow-brand-600/5 hover:border-brand-200 transition-all duration-300">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-50 text-accent-600 group-hover:bg-accent-100 transition">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                </div>
+                <h3 class="mt-5 text-lg font-bold text-surface-900">Data Integration</h3>
+                <p class="mt-2 text-sm text-surface-500 leading-relaxed">
+                    We start from the data you already have — Excel exports, ERP extracts, API feeds —
+                    and build from there. No big data project required upfront.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- HOW IT WORKS                                                           -->
+<!-- ====================================================================== -->
+<section class="py-24 sm:py-32 bg-surface-950 text-white overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center mb-16">
+            <p class="text-sm font-semibold text-brand-400 uppercase tracking-widest mb-3">How It Works</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                From business case to usable solution.
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12"
+             x-data="{ shown: false }" x-intersect.once="shown = true">
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:0s" class="text-center">
+                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500/10 ring-1 ring-brand-500/20 mb-5">
+                    <span class="text-2xl font-black text-brand-400">1</span>
+                </div>
+                <h3 class="text-lg font-bold">Connect</h3>
+                <p class="mt-2 text-sm text-surface-100/60 leading-relaxed">
+                    We start by understanding your operational challenge, current process,
+                    and what success should look like for your teams.
+                </p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.12s" class="text-center">
+                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-500/10 ring-1 ring-accent-500/20 mb-5">
+                    <span class="text-2xl font-black text-accent-400">2</span>
+                </div>
+                <h3 class="text-lg font-bold">Prototype</h3>
+                <p class="mt-2 text-sm text-surface-100/60 leading-relaxed">
+                    In a short PoC cycle (often around a week), we build a usable interface that gives
+                    your team a concrete view of your data and the solution direction.
+                </p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.24s" class="text-center">
+                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500/10 ring-1 ring-brand-500/20 mb-5">
+                    <span class="text-2xl font-black text-brand-400">3</span>
+                </div>
+                <h3 class="text-lg font-bold">Deliver</h3>
+                <p class="mt-2 text-sm text-surface-100/60 leading-relaxed">
+                    We turn the PoC into production planning capability in a focused follow-up sprint,
+                    while making sure your teams understand and trust what they are using.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- SOLUTIONS PREVIEW                                                      -->
+<!-- ====================================================================== -->
+<section class="py-20 sm:py-24 bg-white border-t border-surface-100">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-12">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-3">Solutions</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+                Forecasting applied to real operational challenges.
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Asset Replenishment -->
+            <article class="group rounded-2xl border border-surface-200 bg-surface-50 p-8 hover:border-brand-300 hover:shadow-lg transition-all">
+                <p class="text-xs font-semibold uppercase tracking-widest text-brand-700">Asset Replenishment</p>
+                <h3 class="mt-3 text-2xl font-bold text-surface-900">Predict when to restock</h3>
+                <p class="mt-3 text-sm text-surface-600 leading-relaxed">
+                    Use demand patterns to schedule replenishment before shortages occur —
+                    reducing emergency dispatches and improving service levels.
+                </p>
+                <a href="/solutions/asset-replenishment" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800 transition">
+                    Explore Solution
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </article>
+
+            <!-- Supply Chain Workforce -->
+            <article class="group rounded-2xl border border-surface-200 bg-surface-50 p-8 hover:border-brand-300 hover:shadow-lg transition-all">
+                <p class="text-xs font-semibold uppercase tracking-widest text-brand-700">Supply Chain Workforce</p>
+                <h3 class="mt-3 text-2xl font-bold text-surface-900">Match staff to demand</h3>
+                <p class="mt-3 text-sm text-surface-600 leading-relaxed">
+                    Turn demand forecasts into shift-level staffing plans that logistics managers
+                    can review, adjust, and deploy — site by site.
+                </p>
+                <a href="/solutions/supply-chain-workforce" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800 transition">
+                    Explore Solution
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </article>
+
+            <!-- LeisureLytics -->
+            <article class="group rounded-2xl border border-accent-200 bg-accent-50/30 p-8 hover:border-accent-300 hover:shadow-lg transition-all">
+                <p class="text-xs font-semibold uppercase tracking-widest text-accent-600">Leisure Industry</p>
+                <h3 class="mt-3 text-2xl font-bold text-surface-900">LeisureLytics</h3>
+                <p class="mt-3 text-sm text-surface-600 leading-relaxed">
+                    Our specialist brand for leisure businesses — theme parks, attractions, zoos, holiday parks —
+                    covering revenue management, workforce planning, and demand forecasting.
+                </p>
+                <a href="https://leisurelytics.com" target="_blank" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent-600 hover:text-accent-700 transition">
+                    Visit LeisureLytics
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- SECURITY AND COMPLIANCE                                                -->
+<!-- ====================================================================== -->
+<section class="py-20 sm:py-24 bg-surface-950 text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-12">
+            <p class="text-sm font-semibold text-brand-400 uppercase tracking-widest mb-3">Security & Compliance</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                Built with GDPR and governance in mind.
+            </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="rounded-2xl border border-surface-700 bg-surface-900 p-6">
+                <h3 class="text-sm font-bold text-white">Data minimization</h3>
+                <p class="mt-2 text-sm text-surface-200/70">Only required fields are used for each planning use case.</p>
+            </div>
+            <div class="rounded-2xl border border-surface-700 bg-surface-900 p-6">
+                <h3 class="text-sm font-bold text-white">Access control</h3>
+                <p class="mt-2 text-sm text-surface-200/70">Role-based access and controlled visibility by business function.</p>
+            </div>
+            <div class="rounded-2xl border border-surface-700 bg-surface-900 p-6">
+                <h3 class="text-sm font-bold text-white">Auditability</h3>
+                <p class="mt-2 text-sm text-surface-200/70">Decision logic and key changes remain traceable for review.</p>
+            </div>
+            <div class="rounded-2xl border border-surface-700 bg-surface-900 p-6">
+                <h3 class="text-sm font-bold text-white">Human checkpoints</h3>
+                <p class="mt-2 text-sm text-surface-200/70">Critical planning and scheduling actions can require explicit approval.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- CTA SECTION                                                            -->
+<!-- ====================================================================== -->
+<section class="relative py-24 sm:py-32 overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-accent-50"></div>
+
+    <div class="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+            Ready to move from reactive to forecast-driven?
+        </h2>
+        <p class="mt-4 text-lg text-surface-600 leading-relaxed">
+            See how RivNox can deliver practical value fast,
+            starting from the data you already have.
+        </p>
+        <div class="mt-10">
+            <a href="/contact"
+               class="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/30 transition-all text-base font-semibold">
+                Book a 30-minute discussion to see if there's a match
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

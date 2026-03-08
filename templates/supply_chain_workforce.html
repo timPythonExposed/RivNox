@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+{% block title %}Supply Chain Workforce Planning — RivNox{% endblock %}
+
+{% block content %}
+
+<!-- ====================================================================== -->
+<!-- HERO                                                                   -->
+<!-- ====================================================================== -->
+<section class="relative overflow-hidden bg-gradient-to-b from-surface-950 to-surface-900 text-white">
+    <div class="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-brand-600/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute bottom-0 -left-32 h-[400px] w-[400px] rounded-full bg-accent-500/10 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
+        <div class="mx-auto max-w-3xl text-center animate-fade-in-up">
+            <p class="text-sm font-semibold text-brand-400 uppercase tracking-widest mb-4">Supply Chain Workforce</p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1]">
+                Match your workforce to demand —<br class="hidden sm:block" />
+                <span class="bg-gradient-to-r from-brand-400 to-accent-400 bg-clip-text text-transparent">shift by shift, site by site.</span>
+            </h1>
+            <p class="mt-6 text-lg text-surface-100/70 leading-relaxed max-w-2xl mx-auto">
+                Turn demand forecasts into headcount requirements and shift plans that logistics managers
+                can review, adjust, and deploy — reducing over- and understaffing across your operations.
+            </p>
+            <div class="mt-10">
+                <a href="/contact"
+                   class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/30 transition-all text-base font-semibold">
+                    Discuss Your Use Case
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- THE PROBLEM                                                            -->
+<!-- ====================================================================== -->
+<section class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-3">The Challenge</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950 leading-tight">
+                    Manual shift planning can't keep up with volatile demand.
+                </h2>
+                <div class="mt-6 space-y-4 text-surface-600 leading-relaxed">
+                    <p>
+                        In warehouses, distribution centers, and logistics hubs, demand fluctuates by the day —
+                        driven by order volumes, seasonal peaks, and client contracts.
+                        When shift plans are built on gut feel or static templates, the result is predictable:
+                        too many people on quiet days, too few when volume spikes.
+                    </p>
+                    <p>
+                        Overtime costs climb, service levels slip, and planners spend hours each week
+                        doing work that a demand signal could largely automate.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Problem visual -->
+            <div class="relative" x-data="{ shown: false }" x-intersect.once="shown = true">
+                <div :class="shown && 'animate-fade-in-up'" class="grid grid-cols-2 gap-4">
+                    <div class="rounded-2xl border border-red-200 bg-red-50 p-6">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 text-red-600 mb-3">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+                        </div>
+                        <p class="text-sm font-bold text-red-900">Overstaffing</p>
+                        <p class="mt-1 text-xs text-red-800/70">Paying for capacity you don't need</p>
+                    </div>
+                    <div class="rounded-2xl border border-red-200 bg-red-50 p-6">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 text-red-600 mb-3">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+                        </div>
+                        <p class="text-sm font-bold text-red-900">Understaffing</p>
+                        <p class="mt-1 text-xs text-red-800/70">Missed SLAs and burnt-out teams</p>
+                    </div>
+                    <div class="rounded-2xl border border-red-200 bg-red-50 p-6">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 text-red-600 mb-3">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <p class="text-sm font-bold text-red-900">Manual planning</p>
+                        <p class="mt-1 text-xs text-red-800/70">Hours spent building shift rosters by hand</p>
+                    </div>
+                    <div class="rounded-2xl border border-red-200 bg-red-50 p-6">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 text-red-600 mb-3">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75"/></svg>
+                        </div>
+                        <p class="text-sm font-bold text-red-900">Overtime spikes</p>
+                        <p class="mt-1 text-xs text-red-800/70">Reactive last-minute cost overruns</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- THE APPROACH — PIPELINE                                                -->
+<!-- ====================================================================== -->
+<section class="py-20 sm:py-24 bg-surface-50 border-y border-surface-100">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-14">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-3">The Approach</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+                From demand signal to actionable shift plans.
+            </h2>
+        </div>
+
+        <!-- Pipeline strip -->
+        <div class="flex flex-wrap justify-center gap-2 mb-16" x-data="{ shown: false }" x-intersect.once="shown = true">
+            <template x-for="(step, i) in ['Demand Forecast', 'Headcount Model', 'Shift Generation', 'Constraint Check', 'Manager Review', 'Deployment']" :key="i">
+                <div :class="shown && 'animate-fade-in-up'"
+                     :style="'animation-delay:' + (i * 0.07) + 's'"
+                     class="flex items-center gap-2">
+                    <span class="inline-flex items-center px-3.5 py-2 rounded-lg text-xs font-semibold bg-white border border-surface-200 text-surface-700 shadow-sm"
+                          x-text="step"></span>
+                    <svg x-show="i < 5" class="h-4 w-4 text-surface-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </div>
+            </template>
+        </div>
+
+        <!-- Step details -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="rounded-2xl border border-surface-200 bg-white p-7">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600 mb-4">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3"/></svg>
+                </div>
+                <h3 class="text-lg font-bold text-surface-900">Demand Forecasting</h3>
+                <p class="mt-2 text-sm text-surface-600 leading-relaxed">
+                    Predict operational volumes — order lines, parcels, pallets, shipments — by site,
+                    by day, by shift window. Accounting for seasonality, campaigns, and client contracts.
+                </p>
+            </div>
+
+            <div class="rounded-2xl border border-surface-200 bg-white p-7">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-50 text-accent-600 mb-4">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+                </div>
+                <h3 class="text-lg font-bold text-surface-900">Headcount & Shift Plans</h3>
+                <p class="mt-2 text-sm text-surface-600 leading-relaxed">
+                    Convert demand into FTE requirements per role and skill type,
+                    then generate shift plans that respect labor rules, contracts, and availability.
+                </p>
+            </div>
+
+            <div class="rounded-2xl border border-surface-200 bg-white p-7">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600 mb-4">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h3 class="text-lg font-bold text-surface-900">Manager Review & Deploy</h3>
+                <p class="mt-2 text-sm text-surface-600 leading-relaxed">
+                    Plans are presented in a manager-friendly dashboard for review and adjustment.
+                    Approved plans can be exported to payroll or scheduling systems.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- KEY BENEFITS                                                           -->
+<!-- ====================================================================== -->
+<section class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-14">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-3">Outcomes</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+                What demand-driven workforce planning delivers.
+            </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+             x-data="{ shown: false }" x-intersect.once="shown = true">
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:0s"
+                 class="rounded-2xl border border-surface-100 bg-white p-7 text-center">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 mb-4">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+                </div>
+                <h3 class="font-bold text-surface-900">Right people, right time</h3>
+                <p class="mt-2 text-sm text-surface-500">Staff levels match actual workload</p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.08s"
+                 class="rounded-2xl border border-surface-100 bg-white p-7 text-center">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 mb-4">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75"/></svg>
+                </div>
+                <h3 class="font-bold text-surface-900">Lower labor waste</h3>
+                <p class="mt-2 text-sm text-surface-500">Less overtime, fewer idle hours</p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.16s"
+                 class="rounded-2xl border border-surface-100 bg-white p-7 text-center">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 mb-4">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h3 class="font-bold text-surface-900">Faster planning cycles</h3>
+                <p class="mt-2 text-sm text-surface-500">From hours of manual work to minutes</p>
+            </div>
+
+            <div :class="shown && 'animate-fade-in-up'" style="animation-delay:.24s"
+                 class="rounded-2xl border border-surface-100 bg-white p-7 text-center">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 mb-4">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h3 class="font-bold text-surface-900">Manager confidence</h3>
+                <p class="mt-2 text-sm text-surface-500">Plans they can see, trust, and adjust</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- FIT CHECK                                                              -->
+<!-- ====================================================================== -->
+<section class="py-20 sm:py-24 bg-surface-50 border-y border-surface-100">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-12">
+            <p class="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-3">Fit Check</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+                Is this the right solution for you?
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-8">
+                <h3 class="text-xl font-bold text-emerald-900">Best fit</h3>
+                <ul class="mt-4 space-y-2 text-sm text-emerald-900/90 leading-relaxed">
+                    <li>Logistics, warehouse, or distribution operations with variable daily volumes.</li>
+                    <li>Multi-site operations where each location has different demand patterns.</li>
+                    <li>Teams spending significant time on manual shift planning or last-minute adjustments.</li>
+                    <li>Organizations with historical volume data they aren't using for staffing decisions.</li>
+                </ul>
+            </article>
+
+            <article class="rounded-2xl border border-amber-200 bg-amber-50 p-8">
+                <h3 class="text-xl font-bold text-amber-900">Usually not ideal</h3>
+                <ul class="mt-4 space-y-2 text-sm text-amber-900/90 leading-relaxed">
+                    <li>Very small teams where manual scheduling is genuinely simple and fast.</li>
+                    <li>Operations with completely fixed, contract-driven headcount (no flexibility).</li>
+                    <li>Situations where no volume or demand data is available at all.</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================================== -->
+<!-- CTA                                                                    -->
+<!-- ====================================================================== -->
+<section class="relative py-24 sm:py-32 overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-accent-50"></div>
+
+    <div class="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-surface-950">
+            Ready to plan shifts from demand, not guesswork?
+        </h2>
+        <p class="mt-4 text-lg text-surface-600 leading-relaxed">
+            Let's explore whether forecast-driven workforce planning fits your operations.
+        </p>
+        <div class="mt-10">
+            <a href="/contact"
+               class="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/30 transition-all text-base font-semibold">
+                Book a 30-minute discussion to see if there's a match
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
