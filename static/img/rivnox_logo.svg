@@ -1,0 +1,57 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="800" rx="40" fill="#0F172A"/>
+
+<!-- Stars -->
+<circle cx="120" cy="80" r="1.8" fill="#94A3B8" opacity="0.5"/>
+<circle cx="220" cy="120" r="1.2" fill="#94A3B8" opacity="0.35"/>
+<circle cx="380" cy="70" r="1.5" fill="#94A3B8" opacity="0.45"/>
+<circle cx="520" cy="100" r="2" fill="#94A3B8" opacity="0.4"/>
+<circle cx="650" cy="65" r="1.3" fill="#94A3B8" opacity="0.5"/>
+<circle cx="300" cy="95" r="1" fill="#94A3B8" opacity="0.3"/>
+<circle cx="450" cy="130" r="1.6" fill="#94A3B8" opacity="0.4"/>
+<circle cx="700" cy="110" r="1.2" fill="#94A3B8" opacity="0.35"/>
+<circle cx="160" cy="150" r="1.3" fill="#94A3B8" opacity="0.3"/>
+<circle cx="580" cy="80" r="1.5" fill="#94A3B8" opacity="0.45"/>
+<circle cx="480" cy="55" r="1" fill="#94A3B8" opacity="0.35"/>
+<circle cx="250" cy="60" r="0.9" fill="#94A3B8" opacity="0.4"/>
+
+<!-- Moon -->
+<circle cx="400" cy="170" r="28" fill="none" stroke="#334155" stroke-width="0.8" opacity="0.3"/>
+<circle cx="400" cy="170" r="18" fill="none" stroke="#334155" stroke-width="0.5" opacity="0.2"/>
+<circle cx="400" cy="170" r="8" fill="#94A3B8" opacity="0.15"/>
+
+<!-- Company name -->
+<text x="400" y="310" text-anchor="middle" font-family="Trebuchet MS, sans-serif" font-size="72" font-weight="700" fill="#FFFFFF" letter-spacing="6">RivNox</text>
+<text x="400" y="350" text-anchor="middle" font-family="Calibri, sans-serif" font-size="16" fill="#94A3B8" letter-spacing="7">DATA FLOWS SILENTLY</text>
+
+<!-- Main river (data flow) -->
+<path d="M100 620 Q180 550 260 570 Q340 590 380 520 Q420 450 460 470 Q540 500 580 440 Q620 380 700 400" fill="none" stroke="#0D9488" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+<path d="M100 620 Q180 550 260 570 Q340 590 380 520 Q420 450 460 470 Q540 500 580 440 Q620 380 700 400" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+<!-- Secondary river stream -->
+<path d="M115 640 Q195 575 275 595 Q350 610 390 548 Q430 486 470 500 Q542 520 582 468 Q620 416 695 430" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+
+<!-- Tertiary river stream -->
+<path d="M90 600 Q170 530 250 550 Q338 575 378 505 Q418 435 458 450 Q540 475 580 420 Q622 365 705 382" fill="none" stroke="#14B8A6" stroke-width="1.8" stroke-linecap="round" opacity="0.25"/>
+
+<!-- Data particles along the river -->
+<circle cx="200" cy="575" r="4" fill="#5EEAD4" opacity="0.9"/>
+<circle cx="280" cy="580" r="3" fill="#5EEAD4" opacity="0.7"/>
+<circle cx="340" cy="555" r="4.5" fill="#5EEAD4" opacity="0.85"/>
+<circle cx="400" cy="510" r="3" fill="#5EEAD4" opacity="0.6"/>
+<circle cx="470" cy="480" r="4" fill="#5EEAD4" opacity="0.8"/>
+<circle cx="540" cy="470" r="3" fill="#5EEAD4" opacity="0.65"/>
+<circle cx="620" cy="420" r="3.5" fill="#5EEAD4" opacity="0.75"/>
+<circle cx="670" cy="405" r="2.5" fill="#5EEAD4" opacity="0.6"/>
+
+<!-- Smaller secondary particles -->
+<circle cx="230" cy="590" r="2" fill="#99F6E4" opacity="0.5"/>
+<circle cx="310" cy="595" r="2.5" fill="#99F6E4" opacity="0.45"/>
+<circle cx="420" cy="490" r="2" fill="#99F6E4" opacity="0.55"/>
+<circle cx="510" cy="490" r="2.8" fill="#99F6E4" opacity="0.5"/>
+<circle cx="590" cy="445" r="2" fill="#99F6E4" opacity="0.45"/>
+<circle cx="660" cy="415" r="2.5" fill="#99F6E4" opacity="0.5"/>
+
+<!-- Subtle river reflection/glow -->
+<path d="M100 620 Q180 550 260 570 Q340 590 380 520 Q420 450 460 470 Q540 500 580 440 Q620 380 700 400" fill="none" stroke="#5EEAD4" stroke-width="12" stroke-linecap="round" opacity="0.06"/>
+</svg>
