@@ -24,7 +24,7 @@ jobs:
 
       - name: Build & push to Artifact Registry
         run: |
-          gcloud builds submit --tag europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/rivnox/website:${{ github.sha }}
+          gcloud builds submit --tag europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/rivnox/website:${{ github.sha }} --suppress-logs
 
       - name: Deploy to Cloud Run
         run: |
