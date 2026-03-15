@@ -1,0 +1,7 @@
+__pycache__
+*.pyc
+.git
+.github
+.claude
+.dockerignore
+README.md

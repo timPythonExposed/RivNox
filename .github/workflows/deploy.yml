@@ -1,0 +1,36 @@
+name: Deploy to Cloud Run
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      - name: Build & push to Artifact Registry
+        run: |
+          gcloud builds submit --tag europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/rivnox/website:${{ github.sha }}
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy rivnox-website \
+            --image europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/rivnox/website:${{ github.sha }} \
+            --region europe-west1 \
+            --platform managed \
+            --allow-unauthenticated \
+            --port 8080
