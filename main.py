@@ -69,6 +69,12 @@ async def supply_chain_workforce(request: Request):
     return templates.TemplateResponse("supply_chain_workforce.html", {"request": request})
 
 
+@app.get("/solutions/beer-production-plan", response_class=HTMLResponse)
+async def beer_production_plan(request: Request):
+    """Beer production planning solution page."""
+    return templates.TemplateResponse("beer_production_plan.html", {"request": request})
+
+
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
     """Contact page — enquiry form."""
