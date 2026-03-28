@@ -12,7 +12,7 @@ Then visit http://127.0.0.1:8000
 
 from pathlib import Path
 
-from fastapi import FastAPI, Request, Form
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -78,24 +78,4 @@ async def beer_production_plan(request: Request):
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
     """Contact page — enquiry form."""
-    return templates.TemplateResponse("contact.html", {"request": request, "submitted": False})
-
-
-@app.post("/contact", response_class=HTMLResponse)
-async def contact_submit(
-    request: Request,
-    name: str = Form(...),
-    email: str = Form(...),
-    message: str = Form(...),
-):
-    """Handle contact form submission (demo — just re-renders with a thank-you)."""
-    return templates.TemplateResponse(
-        "contact.html",
-        {
-            "request": request,
-            "submitted": True,
-            "form_name": name,
-            "form_email": email,
-            "form_message": message,
-        },
-    )
+    return templates.TemplateResponse("contact.html", {"request": request})
