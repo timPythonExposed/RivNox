@@ -26,6 +26,7 @@ app = FastAPI(
     title="RivNox",
     description="AI-driven forecasting and planning for operations that run on precision.",
     version="1.0.0",
+    debug=True,
 )
 
 # Mount static files (CSS, images, JS, etc.)
