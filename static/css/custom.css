@@ -16,7 +16,7 @@ html {
 
 /* Subtle focus ring for accessibility */
 :focus-visible {
-    outline: 2px solid #3391ff;
+    outline: 2px solid #36597F;
     outline-offset: 2px;
 }
 
@@ -25,12 +25,12 @@ html {
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: #f1f5f9;
+    background: #F7F5F5;
 }
 ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
+    background: #d6d0d0;
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+    background: #878282;
 }

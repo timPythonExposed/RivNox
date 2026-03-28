@@ -6,7 +6,7 @@
 <!-- ====================================================================== -->
 <!-- CONTACT HERO                                                           -->
 <!-- ====================================================================== -->
-<section class="relative overflow-hidden bg-gradient-to-b from-brand-50/60 via-white to-white">
+<section class="relative overflow-hidden bg-surface-50">
     <div class="pointer-events-none absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-brand-200/30 blur-3xl"></div>
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
@@ -68,7 +68,7 @@
 
                     <button type="submit"
                             :disabled="sending"
-                            class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/30 disabled:opacity-60 disabled:cursor-wait transition-all text-sm font-semibold">
+                            class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white bg-accent-400 hover:bg-accent-500 shadow-lg shadow-accent-400/25 hover:shadow-xl hover:shadow-accent-400/30 disabled:opacity-60 disabled:cursor-wait transition-all text-sm font-semibold">
                         <span x-show="!sending">Send Message</span>
                         <span x-show="sending" x-cloak class="flex items-center gap-2">
                             <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>

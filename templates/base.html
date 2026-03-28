@@ -14,13 +14,13 @@
             theme: {
                 extend: {
                     colors: {
-                        brand:   { 50:'#eef7ff', 100:'#d9edff', 200:'#bce0ff', 300:'#8eccff', 400:'#59b0ff', 500:'#3391ff', 600:'#1570f5', 700:'#0d5ae1', 800:'#1149b6', 900:'#13408f', 950:'#112957' },
-                        accent:  { 400:'#a78bfa', 500:'#8b5cf6', 600:'#7c3aed' },
-                        surface: { 50:'#f8fafc', 100:'#f1f5f9', 800:'#1e293b', 900:'#0f172a', 950:'#020617' },
+                        brand:   { 50:'#eef3f8', 100:'#d5e2ed', 200:'#afc6da', 300:'#83a5c3', 400:'#5c84ab', 500:'#3d6b91', 600:'#36597F', 700:'#2a4463', 800:'#1e3350', 900:'#13223d', 950:'#0a152a' },
+                        accent:  { 50:'#fef7ee', 100:'#fde9cc', 200:'#fbd099', 300:'#f8b566', 400:'#F3A451', 500:'#f09030', 600:'#d4771a' },
+                        surface: { 50:'#F7F5F5', 100:'#ede8e8', 200:'#d6d0d0', 500:'#878282', 600:'#6b6767', 700:'#504c4c', 800:'#2a3f5a', 900:'#1e3250', 950:'#142844' },
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        display: ['Inter', 'system-ui', 'sans-serif'],
+                        sans: ['Fredoka', 'system-ui', 'sans-serif'],
+                        display: ['DM Serif Display', 'Georgia', 'serif'],
                     },
                     animation: {
                         'fade-in':      'fadeIn .6s ease-out both',
@@ -47,7 +47,7 @@
     <!-- Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- Custom overrides -->
     <link rel="stylesheet" href="/static/css/custom.css" />
@@ -65,8 +65,7 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
             <!-- Logo -->
             <a href="/" class="flex items-center gap-2 group">
-                <img src="/static/img/rivnox_logo.svg" alt="RivNox logo" class="h-10 w-10 rounded-lg shadow-md group-hover:shadow-lg transition" />
-                <span class="text-lg font-bold tracking-tight text-surface-900">Riv<span class="text-brand-600">Nox</span></span>
+                <img src="/static/img/logo.jpeg" alt="RivNox logo" class="h-9 w-auto transition opacity-90 group-hover:opacity-100" />
             </a>
 
             <!-- Desktop links -->
@@ -102,7 +101,7 @@
 
                 <a href="/contact" class="hover:text-brand-600 transition">Contact</a>
                 <a href="/contact"
-                   class="ml-2 inline-flex items-center px-4 py-2 rounded-lg text-white bg-brand-600 hover:bg-brand-700 shadow hover:shadow-md transition text-sm font-semibold">
+                   class="ml-2 inline-flex items-center px-4 py-2 rounded-lg text-white bg-accent-400 hover:bg-accent-500 shadow hover:shadow-md transition text-sm font-semibold">
                     Get Started
                 </a>
             </div>
@@ -132,7 +131,7 @@
                     <a href="/solutions/beer-production-plan" class="block px-3 py-2 rounded-md hover:bg-surface-50 text-surface-600 text-sm">Beer Production Plan</a>
                 </div>
                 <a href="/contact" class="block px-3 py-2 rounded-md hover:bg-surface-50 text-surface-700 font-medium">Contact</a>
-                <a href="/contact" class="block mt-2 text-center px-4 py-2 rounded-lg text-white bg-brand-600 font-semibold">Get Started</a>
+                <a href="/contact" class="block mt-2 text-center px-4 py-2 rounded-lg text-white bg-accent-400 hover:bg-accent-500 font-semibold">Get Started</a>
             </div>
         </div>
     </nav>
@@ -155,9 +154,8 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
                 <!-- Brand -->
                 <div class="md:col-span-2">
-                    <div class="flex items-center gap-2 mb-4">
-                        <img src="/static/img/rivnox_logo.svg" alt="RivNox logo" class="h-10 w-10 rounded-lg" />
-                        <span class="text-lg font-bold tracking-tight">Riv<span class="text-brand-400">Nox</span></span>
+                    <div class="mb-4">
+                        <img src="/static/img/logo.jpeg" alt="RivNox logo" class="h-9 w-auto brightness-0 invert opacity-90" />
                     </div>
                     <p class="text-surface-100/70 text-sm leading-relaxed max-w-md">
                         AI-driven forecasting and planning for operations that run on precision.
